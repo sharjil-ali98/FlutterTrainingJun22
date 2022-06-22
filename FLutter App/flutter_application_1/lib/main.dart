@@ -1,27 +1,37 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/10-ListTileDemo.dart';
+import 'package:flutter_application_1/11-MyTabBar.dart';
+import 'package:flutter_application_1/12-MyTabBar1.dart';
+import 'package:flutter_application_1/13-DrawerDemo.dart';
+import 'package:flutter_application_1/15-Selectable.dart';
+import 'package:flutter_application_1/9-BottomNavigationBarDemo.dart';
+import 'package:flutter_application_1/Screens/HomeScreen.dart';
+import 'package:flutter_application_1/Screens/Screen1.dart';
+import 'package:flutter_application_1/Screens/Screen2.dart';
+
+import '14-DataTableDemo.dart';
+import 'Screens/Screen0.dart';
 
 void main() {
-  runApp(MaterialApp(
-      home: Scaffold(
-    appBar: AppBar(
-      title: Text("My First Custom Flutter App"),
-      backgroundColor: Color.fromARGB(255, 255, 128, 64),
-      centerTitle: true,
+  runApp(
+    MaterialApp(
+      // home: HomeScreen(),
+      // home: BottomNavigationDemo(),
+      // home: MyTabBar(),
+      // home: MyTabBar1(),
+      home: SelectableDemo(),
+      // home: ListTileDemo(),
+      // home: DrawerDemo(),
+      // home: DataTableDemo(),
+      routes: {
+        'S0': (context) => Screen0(title: "Settings"),
+        'S1': (context) => Screen1(
+              title: 'Gallery',
+            ),
+        'S2': (context) => Screen2(title: 'About Phone'),
+      },
     ),
-    body: Center(
-      child: // creating Text Widget
-          Text(
-        "I am Your Trainer for Flutter",
-        textDirection: TextDirection.ltr,
-        style: TextStyle(fontSize: 24),
-      ),
-    ),
-  )));
+  );
 }
-
-
-// Widget: UI Component which is going to display content on the Mobile Screen. 
-// Inside Flutter Everything is considered as Widget (Class)
-// Hierarchy of Nested Widgets known as Widget Tree
